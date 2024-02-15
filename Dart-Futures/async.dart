@@ -7,13 +7,17 @@ void main(List<String>args)async{
   print(await(getCountry()));
   print(await(getZipsCode()));
 }
+//one way of using future,=
 Future<String> getUserName() async => 'Rishi Jha';
+
+//using future with future.value()
 Future<String> getAddress() => Future.value('dewa 123 st.');
 
+//using futures with a time delay 
 Future<String> getPhoneNumber() => 
 Future.delayed(const Duration(seconds: 1), ()=> '4324- 423423');
 
-
+//using await with delay and returning the value after some time.
 Future<String>getCity() async{
   await Future.delayed(const Duration(seconds: 1));
   return 'Ranchi';

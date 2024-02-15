@@ -1,11 +1,16 @@
 void main(List<String>args) async{
-  print(
+  try{
+      print(
   await getFullName(firstName: 'Rishi', lastName: 'Jha'),
   );
   
   print(
     await(getFullName(firstName: '', lastName: 'Rishi'))
   );
+  }catch(Exception){
+    print("either first or last name is empty");
+  }
+
 }
 Future<String> getFullName({
   required String firstName,
